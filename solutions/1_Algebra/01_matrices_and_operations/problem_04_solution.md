@@ -1,5 +1,10 @@
 # Exercise 4: Matrix Multiplication and Noncommutativity
 
+**Problem Statement:**
+Given the matrices $A$ and $B$:
+$$A = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}, \quad B = \begin{pmatrix} 2 & 0 \\ 3 & 1 \end{pmatrix}$$
+Compute the matrix products $AB$ and $BA$. Compare $AB$ with $BA$ and explain the result.
+
 **Step-by-Step Explanation:**
 Matrix multiplication involves calculating the dot product of the rows of the first matrix with the columns of the second matrix. 
 
@@ -20,6 +25,7 @@ Matrix multiplication involves calculating the dot product of the rows of the fi
 3. **Comparing the results:** The matrix $AB$ is completely different from the matrix $BA$. This illustrates noncommutativity: in matrix algebra, the order in which you multiply factors matters.
 
 **Final Result:**
-* $AB = \begin{pmatrix} 8 & 2 \\ 3 & 1 \end{pmatrix}$
-* $BA = \begin{pmatrix} 2 & 4 \\ 3 & 7 \end{pmatrix}$
-* $AB \neq BA$. This means matrix multiplication is not commutative; reversing the order changes the combination of rows and columns being multiplied, leading to a different result.
+- $AB = \begin{pmatrix} 8 & 2 \\ 3 & 1 \end{pmatrix}$
+- $BA = \begin{pmatrix} 2 & 4 \\ 3 & 7 \end{pmatrix}$
+- $AB \neq BA$. This means matrix multiplication is not commutative; reversing the order changes the combination of rows and columns being multiplied, leading to a different result.
+

@@ -1,12 +1,19 @@
 # Exercise 6: Transpose
 
+**Problem Statement:**
+Given the matrices $A$ and $B$:
+$$A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 \\ 2 & 1 \\ -1 & 3 \end{pmatrix}$$
+1. Find the transposes $A^T$ and $B^T$.
+2. Compute the product $AB$.
+3. Verify the identity $(AB)^T = B^T A^T$.
+
 **Step-by-Step Explanation:**
 1. **Computing Transposes ($A^T$ and $B^T$):**
    The transpose of a matrix, denoted by the superscript $T$, flips the matrix over its main diagonal. Rows become columns, and columns become rows.
    * $A$ is $2 \times 3$, so $A^T$ will be $3 \times 2$:
      Row 1 of $A$ becomes Col 1 of $A^T$. Row 2 of $A$ becomes Col 2 of $A^T$.
    * $B$ is $3 \times 2$, so $B^T$ will be $2 \times 3$:
-     Row 1 of $B$ becomes Col 1 of $B^T$, etc.
+     Row 1 of $B$ becomes Col 1 of $B^T$, Row 2 becomes Col 2, and Row 3 becomes Col 3.
 
 2. **Computing $AB$:**
    * $A$ ($2 \times 3$) times $B$ ($3 \times 2$) yields a $2 \times 2$ matrix.
@@ -18,9 +25,9 @@
 
 3. **Verifying $(AB)^T = B^T A^T$:**
    * First, take the transpose of $AB$:
-     $(AB)^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}$
+     $$(AB)^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}$$
    * Next, compute the product $B^T A^T$:
-     $B^T = \begin{pmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}$ and $A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$
+     $$B^T = \begin{pmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}, \quad A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$$
      * Entry 1,1: $(1)(1) + (2)(2) + (-1)(3) = 1 + 4 - 3 = 2$
      * Entry 1,2: $(1)(4) + (2)(5) + (-1)(6) = 4 + 10 - 6 = 8$
      * Entry 2,1: $(0)(1) + (1)(2) + (3)(3) = 0 + 2 + 9 = 11$
@@ -28,7 +35,7 @@
      $$ B^T A^T = \begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix} $$
 
 **Final Result:**
-* $A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$
-* $B^T = \begin{pmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}$
-* $AB = \begin{pmatrix} 2 & 11 \\ 8 & 23 \end{pmatrix}$
-* Verification: Both $(AB)^T$ and $B^T A^T$ result in $\begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}$, confirming the property.
+- $A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$
+- $B^T = \begin{pmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}$
+- $AB = \begin{pmatrix} 2 & 11 \\ 8 & 23 \end{pmatrix}$
+- Verification: Both $(AB)^T$ and $B^T A^T$ result in $\begin{pmatrix} 2 & 8 \\ 11 & 23 \end{pmatrix}$, confirming the property.
