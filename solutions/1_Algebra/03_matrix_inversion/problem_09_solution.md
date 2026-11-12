@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 A=\begin{pmatrix}
@@ -12,11 +12,20 @@ B=\begin{pmatrix}
 \end{pmatrix}
 $$
 
-We need to solve:
+**Problem statement:** Solve the matrix equation
 
 $$
 AX=B
 $$
+
+for the unknown matrix $X$. Before calculating, decide on which side of the equation $A^{-1}$ must be multiplied, and explain why. Then compute $X$, and check your result by calculating $AX$ and comparing it with $B$.
+
+**We need to:**
+
+1. Decide which side to multiply by $A^{-1}$, taking into account that matrix multiplication is not commutative.
+2. Calculate $A^{-1}$.
+3. Calculate $X$.
+4. Check the result by computing $AX$ and confirming that it equals $B$.
 
 **Step 1: Decide which side to multiply by $A^{-1}$.**
 

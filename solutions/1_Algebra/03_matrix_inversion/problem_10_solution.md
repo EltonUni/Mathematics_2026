@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 D=
@@ -16,7 +16,13 @@ E=
 \end{pmatrix}
 $$
 
-We need to determine which matrix is invertible, find its inverse, and check the result.
+**Problem statement:** Decide which of the two diagonal matrices $D$ and $E$ is invertible, and justify your decision. For the invertible matrix, find its inverse **without using Gauss-Jordan elimination**, using instead the special structure of a diagonal matrix. Then check your result by multiplication.
+
+**We need to:**
+
+1. Determine which of the matrices $D$ and $E$ is invertible, and explain why.
+2. Find the inverse of the invertible matrix without Gauss-Jordan elimination.
+3. Check the result by multiplying the matrix with the inverse you found and confirming that the product equals the identity matrix $I$.
 
 **Step 1: Determine which matrix is invertible.**
 
