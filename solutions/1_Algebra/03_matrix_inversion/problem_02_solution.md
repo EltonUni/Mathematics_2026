@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 A=\begin{pmatrix}
@@ -6,6 +6,15 @@ A=\begin{pmatrix}
 5&4
 \end{pmatrix}
 $$
+
+**Problem statement:** Find the inverse $A^{-1}$ of the matrix $A$ using the formula for the inverse of a $2 \times 2$ matrix. Then verify your answer by multiplying $A$ with the inverse you found, that is, by computing $AA^{-1}$ once and checking that it equals the identity matrix $I$.
+
+**We need to:**
+
+1. Write down the inverse formula for a $2 \times 2$ matrix.
+2. Calculate the determinant $\det(A)$, which must be nonzero for the inverse to exist.
+3. Substitute into the formula to obtain $A^{-1}$.
+4. Check the result by calculating $AA^{-1}$ and confirming that it equals $I$.
 
 **Step 1: Use the formula for a $2\times2$ matrix.**
 

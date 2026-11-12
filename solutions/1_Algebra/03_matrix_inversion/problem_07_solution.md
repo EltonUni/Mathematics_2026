@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 A=\begin{pmatrix}
@@ -12,7 +12,14 @@ B=\begin{pmatrix}
 \end{pmatrix}
 $$
 
-We need to compute $(AB)^{-1}$ and $B^{-1}A^{-1}$ and show that they are equal.
+**Problem statement:** Compute the inverse of the product, $(AB)^{-1}$, and also the product of the inverses in reversed order, $B^{-1}A^{-1}$. Check that the two results are equal, and explain why the order of the factors is reversed.
+
+**We need to:**
+
+1. Calculate $AB$ and then its inverse $(AB)^{-1}$.
+2. Calculate $A^{-1}$ and $B^{-1}$, and then the product $B^{-1}A^{-1}$.
+3. Compare the two results and check that $(AB)^{-1}=B^{-1}A^{-1}$.
+4. Explain why the inverse of a product reverses the order of the factors.
 
 **Step 1: Calculate AB.**
 

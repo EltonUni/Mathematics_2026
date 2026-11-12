@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 A=\begin{pmatrix}
@@ -7,6 +7,15 @@ A=\begin{pmatrix}
 1&0&1
 \end{pmatrix}
 $$
+
+**Problem statement:** Find the inverse $A^{-1}$ of the $3 \times 3$ matrix $A$ using Gauss-Jordan elimination. Start from the augmented matrix $[A\mid I]$ and apply row operations until the left side becomes the identity matrix $I$. Then read off the inverse from the right side, and check your result by multiplication.
+
+**We need to:**
+
+1. Write the augmented matrix $[A\mid I]$.
+2. Apply row operations to transform the left side into $I$, showing the successive augmented matrices.
+3. Read the inverse $A^{-1}$ from the right side.
+4. Check the result by multiplying $A$ with the inverse you found and confirming that the product equals $I$.
 
 **Step 1: Write the augmented matrix $[A\mid I]$.**
 

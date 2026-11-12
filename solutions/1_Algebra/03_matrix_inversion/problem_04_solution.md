@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 A=\begin{pmatrix}
@@ -6,6 +6,15 @@ A=\begin{pmatrix}
 3&5
 \end{pmatrix}
 $$
+
+**Problem statement:** Find the inverse $A^{-1}$ of the matrix $A$ using the Gauss-Jordan method. Start from the augmented matrix $[A\mid I]$ and apply row operations, displaying the augmented matrix after each step, until the left side becomes the identity matrix $I$. Then read off the inverse from the right side, and explain why having $I$ on the left means the right side is $A^{-1}$.
+
+**We need to:**
+
+1. Write the augmented matrix $[A\mid I]$.
+2. Apply row operations to transform the left side into $I$, showing the successive augmented matrices.
+3. Read the inverse $A^{-1}$ from the right side.
+4. Explain why this method works: why the matrix that appears on the right is the inverse of $A$.
 
 **Step 1: Write the augmented matrix $[A\mid I]$.**
 

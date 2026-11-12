@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 Ax=b
@@ -17,6 +17,14 @@ b=\begin{pmatrix}
 7
 \end{pmatrix}
 $$
+
+**Problem statement:** Solve the linear system $Ax=b$ for the vector $x$ by using the formula $x=A^{-1}b$. Then verify the vector you found by substituting it back into the original equation $Ax=b$.
+
+**We need to:**
+
+1. Find the inverse $A^{-1}$ of the matrix $A$.
+2. Calculate $x=A^{-1}b$.
+3. Check the result by substituting $x$ into $Ax$ and confirming that it equals $b$.
 
 We use the formula:
 

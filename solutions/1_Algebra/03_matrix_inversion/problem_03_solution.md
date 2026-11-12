@@ -1,4 +1,4 @@
-Given:
+**Given:**
 
 $$
 A=\begin{pmatrix}
@@ -7,7 +7,13 @@ A=\begin{pmatrix}
 \end{pmatrix}
 $$
 
-We need to explain why $A^{-1}$ does not exist in two ways.
+**Problem statement:** Explain why the inverse $A^{-1}$ of the matrix $A$ does not exist. Give two different explanations: first, using the determinant (it is zero), and second, using the dependence between the rows of $A$.
+
+**We need to:**
+
+1. Calculate $\det(A)$ and show that it equals zero, which means $A$ cannot be invertible.
+2. Find the relation between the rows of $A$ and show that they are linearly dependent, which also means $A$ cannot be invertible.
+3. Conclude that both explanations lead to the same result: $A^{-1}$ does not exist.
 
 **Method 1: Using the determinant**
 
