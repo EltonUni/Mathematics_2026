@@ -1,25 +1,40 @@
-For a 2x2 matrix $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, the determinant is calculated as $\det(A) = ad - bc$.
+# Exercise 1
 
-Let's compute the determinants for the given matrices.
+## Question
 
-**First Matrix:**
-$A = \begin{pmatrix} 3 & -2 \\ 5 & 4 \end{pmatrix}$
+Consider the two $2 \times 2$ matrices
 
-$\det(A) = (3)(4) - (-2)(5)$
-$\det(A) = 12 - (-10)$
-$\det(A) = 12 + 10$
-$\det(A) = 22$
+$$A = \begin{pmatrix} 3 & -2 \\ 5 & 4 \end{pmatrix}, \qquad B = \begin{pmatrix} 1 & 7 \\ 2 & 14 \end{pmatrix}.$$
 
-**Second Matrix:**
-$B = \begin{pmatrix} 1 & 7 \\ 2 & 14 \end{pmatrix}$
+1. Compute the determinant of $A$ and the determinant of $B$.
+2. Determine which of the two matrices is invertible, and justify your answer.
 
-$\det(B) = (1)(14) - (7)(2)$
-$\det(B) = 14 - 14$
-$\det(B) = 0$
+## Solution
 
-**Which matrix is invertible?**
+For a $2 \times 2$ matrix $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, the determinant is calculated as $\det(M) = ad - bc$.
+
+### Part 1: Determinants
+
+**Matrix $A$:**
+
+$$\det(A) = (3)(4) - (-2)(5)$$
+$$\det(A) = 12 - (-10)$$
+$$\det(A) = 12 + 10$$
+$$\det(A) = 22$$
+
+**Matrix $B$:**
+
+$$\det(B) = (1)(14) - (7)(2)$$
+$$\det(B) = 14 - 14$$
+$$\det(B) = 0$$
+
+### Part 2: Which matrix is invertible?
 
 A square matrix is invertible if and only if its determinant is non-zero.
 
-*   The determinant of the first matrix is 22 (which is $\neq 0$), so the **first matrix is invertible**.
-*   The determinant of the second matrix is 0, so the second matrix is not invertible.
+* $\det(A) = 22 \neq 0$, so **$A$ is invertible**.
+* $\det(B) = 0$, so $B$ is not invertible.
+
+### Answer
+
+$\det(A) = 22$ and $\det(B) = 0$. Only the first matrix, $A$, is invertible, because it is the only one with a non-zero determinant.
