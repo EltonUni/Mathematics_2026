@@ -1,15 +1,169 @@
-## Question
+# Exercise 8. Linear Combination and Checking the Result
 
-Determine whether $w=(5,1)$ is $au+bv$ for $u=(1,1)$ and $v=(2,-1)$; find and check the coefficients and explain their geometric meaning.
+## Given
 
-## Solution
+Consider the three vectors in $\mathbb{R}^2$:
 
-Equating coordinates in $au+bv=w$ gives
+$$
+u = (1, 1), \qquad v = (2, -1), \qquad w = (5, 1).
+$$
 
-$$a+2b=5,\qquad a-b=1.$$
+## Problem statement
 
-Subtracting the second equation from the first gives $3b=4$, hence $b=4/3$ and $a=1+b=7/3$. Reconstruction checks the answer:
+For the given vectors $u = (1, 1)$, $v = (2, -1)$, and $w = (5, 1)$:
 
-$$\frac73(1,1)+\frac43(2,-1)=\left(\frac{15}{3},\frac{3}{3}\right)=(5,1).$$
+1. Determine whether $w$ can be expressed as a linear combination $w = au + bv$ for some scalars $a, b \in \mathbb{R}$, and if so, find the exact values of $a$ and $b$.
+2. Reconstruct $w$ from the computed scalars $a$ and $b$ to verify that the linear combination holds.
+3. Explain the geometric meaning of the existence (and uniqueness) of such coefficients $a$ and $b$ in $\mathbb{R}^2$.
 
-Geometrically, the coefficients describe the directed amounts of the two nonparallel directions needed to reach $w$; since $u$ and $v$ span the plane, such coordinates exist uniquely.
+---
+
+## Step 1: Mechanism — Linear Combinations and Equivalent Linear System
+
+A vector $w \in \mathbb{R}^2$ is a **linear combination** of $u, v \in \mathbb{R}^2$ if there exist real scalars $a, b \in \mathbb{R}$ such that
+
+$$
+au + bv = w.
+$$
+
+Because scalar multiplication and vector addition are defined component by component, this single vector equation is equivalent to a system of two scalar linear equations in the two unknowns $a$ and $b$:
+
+$$
+a(u_1, u_2) + b(v_1, v_2) = (w_1, w_2)
+\iff
+\begin{cases}
+u_1 a + v_1 b = w_1,\\
+u_2 a + v_2 b = w_2.
+\end{cases}
+$$
+
+In matrix form, this is $A\mathbf{c} = w$ with coefficient matrix $A = \begin{pmatrix} u_1 & v_1 \\ u_2 & v_2 \end{pmatrix}$ and unknown coefficient vector $\mathbf{c} = \begin{pmatrix} a \\ b \end{pmatrix}$. If $\det A \neq 0$, the system has a **unique** solution $(a, b)$ for every $w \in \mathbb{R}^2$.
+
+---
+
+## Step 2: Set Up the System of Linear Equations
+
+Substitute $u = (1, 1)$, $v = (2, -1)$, and $w = (5, 1)$ into $au + bv = w$:
+
+$$
+a(1, 1) + b(2, -1) = (5, 1).
+$$
+
+Expand the left-hand side component by component:
+
+$$
+(a + 2b,\ a - b) = (5, 1).
+$$
+
+Equating corresponding components gives the $2 \times 2$ linear system:
+
+$$
+\begin{cases}
+a + 2b = 5,\\
+a - b = 1.
+\end{cases}
+$$
+
+Check the determinant of the coefficient matrix $A = \begin{pmatrix} 1 & 2 \\ 1 & -1 \end{pmatrix}$:
+
+$$
+\det A = 1 \cdot (-1) - 2 \cdot 1 = -1 - 2 = -3 \neq 0.
+$$
+
+Because $\det A \neq 0$, a solution $(a, b)$ **exists and is unique**.
+
+---
+
+## Step 3: Solve for the Coefficients $a$ and $b$
+
+Write the augmented matrix $[A \mid w]$ and apply Gaussian elimination:
+
+$$
+\left(\begin{array}{cc|c}
+1 & 2 & 5\\
+1 & -1 & 1
+\end{array}\right)
+$$
+
+Eliminate $a$ from row 2 using $R_2 \leftarrow R_2 - R_1$:
+
+- Coefficient of $a$: $1 - 1 = 0$
+- Coefficient of $b$: $-1 - 2 = -3$
+- Right-hand side: $1 - 5 = -4$
+
+$$
+\left(\begin{array}{cc|c}
+1 & 2 & 5\\
+0 & -3 & -4
+\end{array}\right)
+$$
+
+**Back substitution:**
+
+- **From row 2:**
+  $$
+  -3b = -4 \implies b = \frac{4}{3}.
+  $$
+- **From row 1:**
+  $$
+  a + 2b = 5 \implies a + 2\left(\frac{4}{3}\right) = 5 \implies a = 5 - \frac{8}{3} = \frac{15 - 8}{3} = \frac{7}{3}.
+  $$
+
+Therefore, $w$ **can** be written as $w = au + bv$ with the unique coefficients:
+
+$$
+\boxed{a = \frac{7}{3}, \qquad b = \frac{4}{3}}
+$$
+
+---
+
+## Step 4: Reconstruct $w$ to Verify the Result
+
+Substitute $a = \frac{7}{3}$ and $b = \frac{4}{3}$ back into the linear combination $au + bv$:
+
+$$
+\begin{aligned}
+\frac{7}{3}u + \frac{4}{3}v &= \frac{7}{3}(1, 1) + \frac{4}{3}(2, -1)\\
+&= \left(\frac{7}{3},\ \frac{7}{3}\right) + \left(\frac{8}{3},\ -\frac{4}{3}\right)\\
+&= \left(\frac{7 + 8}{3},\ \frac{7 - 4}{3}\right)\\
+&= \left(\frac{15}{3},\ \frac{3}{3}\right)\\
+&= (5, 1) = w. \quad \checkmark
+\end{aligned}
+$$
+
+The reconstructed vector matches $w = (5, 1)$ exactly.
+
+---
+
+## Step 5: Geometric Meaning of the Coefficients
+
+1. **Two non-collinear directions span the entire plane $\mathbb{R}^2$:**
+   The vectors $u = (1, 1)$ and $v = (2, -1)$ are not scalar multiples of each other—they lie along two distinct, intersecting lines through the origin (with slopes $1$ and $-\frac{1}{2}$, respectively). Because they point in independent directions, they form a **basis** for $\mathbb{R}^2$, which guarantees that *any* target vector $w$ in the plane can be reached as a linear combination of $u$ and $v$ in **exactly one way**.
+2. **Tip-to-tail navigation and parallelogram construction:**
+   Geometrically, finding $a = \frac{7}{3}$ and $b = \frac{4}{3}$ means that we combine the scaled vectors $\frac{7}{3}u$ and $\frac{4}{3}v$. Their sum reaches the point $w = (5, 1)$. The lengths of these scaled vectors are $\frac{7}{3}\|u\|$ and $\frac{4}{3}\|v\|$, respectively. Equivalently, $w$ is the diagonal of the parallelogram formed by these two scaled vectors.
+3. **Coordinates in an oblique grid:**
+   While $(5, 1)$ are the coordinates of $w$ along the standard perpendicular axes $e_1 = (1, 0)$ and $e_2 = (0, 1)$, the coefficients $(a, b) = \left(\frac{7}{3}, \frac{4}{3}\right)$ are the **coordinates of $w$ relative to the oblique coordinate grid** generated by the directions $u$ and $v$.
+
+---
+
+## Summary Table
+
+| Stage | Expression / Operation | Calculation | Result |
+|---|---|---|---|
+| Linear system | $a(1, 1) + b(2, -1) = (5, 1)$ | $a + 2b = 5,\ a - b = 1$ | Consistent ($\det A = -3 \neq 0$) |
+| Coefficients | Row reduction + back substitution | $-3b = -4$, $a = 5 - 2b$ | $a = \frac{7}{3}$, $b = \frac{4}{3}$ |
+| Reconstruction check | $\frac{7}{3}u + \frac{4}{3}v$ | $\left(\frac{7}{3}, \frac{7}{3}\right) + \left(\frac{8}{3}, -\frac{4}{3}\right)$ | $(5, 1) = w$ ✓ |
+| Geometric meaning | Basis / oblique coordinates | Diagonal of $\frac{7}{3}u$ and $\frac{4}{3}v$ | Unique path in $\mathbb{R}^2$ |
+
+---
+
+## Final Answer
+
+$$
+\boxed{
+w = \frac{7}{3}u + \frac{4}{3}v, \qquad
+\text{where } a = \frac{7}{3} \text{ and } b = \frac{4}{3}
+}
+$$
+
+Yes, $w$ can be written uniquely as $au + bv$. Geometrically, because $u$ and $v$ point in two non-parallel directions in $\mathbb{R}^2$, scaling $u$ by $\frac{7}{3}$ and $v$ by $\frac{4}{3}$ forms the unique parallelogram (or tip-to-tail path) whose sum reaches $(5, 1)$.
