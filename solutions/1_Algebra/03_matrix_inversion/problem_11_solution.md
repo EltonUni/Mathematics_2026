@@ -120,8 +120,8 @@ $$
 \det A = 1\cdot(t-1)\cdot(t-1) = (t-1)^2.
 $$
 
-- $\det A \neq 0 \iff t \neq 1$ → unique solution and the inverse exists.
-- $\det A = 0 \iff t = 1$ → the inverse does not exist (and this system has no solution).
+- $\det A \neq 0 \iff t \neq 1$: the inverse exists.
+- $\det A = 0 \iff t = 1$: the inverse does not exist. In particular, the adjugate formula $A^{-1} = \frac{1}{\det A}\operatorname{adj}(A)$ would require division by zero. Therefore, $t = 1$ must be excluded before calculating the inverse.
 
 ---
 
@@ -203,7 +203,7 @@ At the excluded value $t=1$, the denominator $t-1$ in the inverse formula is zer
 
 ## Step 8: Why "infinitely many solutions" never occurs
 
-Infinitely many solutions would need a consistent system with a free variable. At $t = 1$ the system has a free-variable structure ($\operatorname{rank}(A) = 1 < 3$), but it is inconsistent because the right-hand sides $1, 2, 3$ are not compatible. For $t \neq 1$ there are no free variables. So this case never appears.
+Infinitely many solutions require a consistent system with at least one free variable. At $t = 1$, the coefficient matrix has rank $1 < 3$, but the augmented matrix has rank $2$. Since the ranks are different, the system is inconsistent and has no solutions. For $t \neq 1$, all three variables are pivot variables, so the solution is unique. Therefore, infinitely many solutions never occur.
 
 ---
 
@@ -221,16 +221,16 @@ Infinitely many solutions would need a consistent system with a free variable. A
 
 - For $t \neq 1$: the inverse exists and the unique solution is
 
-$$
-A^{-1} = \frac{1}{t-1}
-\begin{pmatrix}
-t+1 & -1 & -1\\
--1 & 1 & 0\\
--1 & 0 & 1
-\end{pmatrix},
-\qquad
-(x,y,z) = \left(\frac{t-4}{t-1},\ \frac{1}{t-1},\ \frac{2}{t-1}\right).
-$$
+  $$
+  A^{-1} = \frac{1}{t-1}
+  \begin{pmatrix}
+  t+1 & -1 & -1\\
+  -1 & 1 & 0\\
+  -1 & 0 & 1
+  \end{pmatrix},
+  \qquad
+  (x,y,z) = \left(\frac{t-4}{t-1},\ \frac{1}{t-1},\ \frac{2}{t-1}\right).
+  $$
 
 - For $t = 1$: $A^{-1}$ does not exist because $\det A = 0$, and the system has **no solution** because it is inconsistent.
 - Infinitely many solutions never occur.

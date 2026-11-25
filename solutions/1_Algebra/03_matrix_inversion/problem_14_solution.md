@@ -8,16 +8,16 @@ $$
 
 ## Problem statement
 
-Given that \(A^2=I\):
+Given that $A^2=I$:
 
-1. Prove that \(A^{-1}=A\).
-2. Give an example of a \(2\times2\) matrix different from both \(I\) and \(-I\) that satisfies this condition.
+1. Prove that $A^{-1}=A$.
+2. Give an example of a $2\times2$ matrix different from both $I$ and $-I$ that satisfies this condition.
 3. Verify the example by explicitly multiplying the matrix by itself and showing that the result is the identity matrix.
 4. Use the multiplication verification to confirm that the example is its own inverse.
 
 ---
 
-## Step 1: Prove that \(A^{-1}=A\)
+## Step 1: Prove that $A^{-1}=A$
 
 We know that:
 
@@ -31,21 +31,21 @@ $$
 A\cdot A=I
 $$
 
-According to the definition of an inverse matrix, if:
+According to the definition of an inverse matrix, if a square matrix $B$ satisfies:
 
 $$
 AB=BA=I
 $$
 
-then \(B\) is the inverse of \(A\).
+then $B$ is the inverse of $A$.
 
-Since:
+Setting $B=A$, since:
 
 $$
 A\cdot A=I
 $$
 
-it follows that:
+it follows directly that:
 
 $$
 \boxed{A^{-1}=A}
@@ -53,9 +53,9 @@ $$
 
 ---
 
-## Step 2: Give an example of a \(2\times2\) matrix
+## Step 2: Give an example of a $2\times2$ matrix
 
-Choose the matrix:
+Choose the permutation (reflection) matrix:
 
 $$
 A=
@@ -65,13 +65,13 @@ A=
 \end{pmatrix}
 $$
 
-This matrix is different from both \(I\) and \(-I\).
+This matrix is different from both $I=\begin{pmatrix}1&0\\0&1\end{pmatrix}$ and $-I=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}$.
 
 ---
 
 ## Step 3: Verify the condition by multiplication
 
-Calculate \(A^2\):
+Calculate $A^2$:
 
 $$
 A^2=
@@ -110,7 +110,17 @@ $$
 \boxed{A^2=I}
 $$
 
-And consequently:
+---
+
+## Step 4: Confirm that the example is its own inverse
+
+From Step 3, multiplying $A$ by itself on either side gives the identity matrix:
+
+$$
+A\cdot A = A^2 = I.
+$$
+
+Because $A\cdot A = I$ matches the inverse condition $AB = BA = I$ with $B = A$, the matrix $A$ is its own inverse:
 
 $$
 \boxed{
@@ -126,6 +136,6 @@ $$
 
 ## Final Conclusion
 
-If a square matrix satisfies \(A^2=I\), then it is its own inverse.
+If a square matrix satisfies $A^2=I$, then it is its own inverse ($A^{-1}=A$).
 
-Our example confirms this because multiplying the matrix by itself gives the identity matrix.
+Our example $A=\begin{pmatrix}0&1\\1&0\end{pmatrix}$ is distinct from $I$ and $-I$, and multiplying it by itself gives $A^2=I$, confirming that $A^{-1}=A$.
