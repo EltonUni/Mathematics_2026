@@ -1,5 +1,37 @@
 # Exercise 15. Classifying Three Systems
 
+## The systems
+
+Consider the following three systems of two linear equations in the unknowns $x, y$:
+
+$$
+\text{(System 1)}\ \begin{cases}
+x + y = 2,\\
+x - y = 0,
+\end{cases}
+\qquad
+\text{(System 2)}\ \begin{cases}
+x + y = 2,\\
+2x + 2y = 4,
+\end{cases}
+\qquad
+\text{(System 3)}\ \begin{cases}
+x + y = 2,\\
+2x + 2y = 5.
+\end{cases}
+$$
+
+## Problem statement
+
+Classify each of the three given systems according to whether it has **exactly one solution**, **infinitely many solutions**, or **no solution**:
+
+1. Apply Gaussian elimination to each augmented matrix only as far as needed to identify any contradictory row and count the pivots.
+2. Determine the classification of each system using pivots, matrix ranks ($\operatorname{rank}(A)$ and $\operatorname{rank}([A \mid b])$), and a geometric interpretation of the lines.
+3. Whenever a system is consistent, find and verify its explicit or parametric solution.
+4. Compare Systems 2 and 3 to explain how proportional left-hand sides and differing right-hand sides determine consistency and the number of solutions.
+
+---
+
 The goal is to eliminate **only as far as needed** to see the type. The decisive question is always: after elimination, is there a contradictory row $(0\ \ 0 \mid c)$ with $c \neq 0$, and how many pivots are there compared with the number of unknowns?
 
 ---

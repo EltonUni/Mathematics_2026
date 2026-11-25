@@ -2,6 +2,8 @@
 
 ## The two systems
 
+Consider the following two overdetermined systems of three linear equations in two unknowns $x, y$:
+
 $$
 \text{(S1)}\ \begin{cases} x + y = 2,\\ 2x - y = 1,\\ 3x = 3, \end{cases}
 \qquad\qquad
@@ -15,6 +17,13 @@ A = \begin{pmatrix} 1 & 1\\ 2 & -1\\ 3 & 0 \end{pmatrix}.
 $$
 
 They differ only in the last right-hand-side entry: $3$ versus $3.1$.
+
+## Problem statement
+
+Analyze and compare the two systems $\text{(S1)}$ and $\text{(S2)}$:
+
+1. Check the consistency of both systems using Gaussian elimination (comparing $\operatorname{rank}(A)$ and $\operatorname{rank}([A \mid b])$), and find and verify the solution whenever a system is consistent.
+2. Explain the effect of the small change in the right-hand side ($b_3 = 3$ versus $b_3 = 3.1$)—specifically why such a small perturbation changes the system from consistent with a unique solution to inconsistent, using row dependence, rank/column space, and a geometric interpretation.
 
 ---
 
@@ -162,7 +171,7 @@ $$
 b_3 = b_1 + b_2 = 2 + 1 = 3.
 $$
 
-   S1 satisfies this ($b_3 = 3$). S2 breaks it ($3.1 \neq 3$) by $0.1$.
+S1 satisfies this ($b_3 = 3$). S2 breaks it ($3.1 \neq 3$) by $0.1$.
 
 3. **Geometrically**, each equation is a line in the plane. In S1 the three lines pass through the single point $(1,1)$. In S2 the third line $x = \tfrac{3.1}{3} \approx 1.0333$ is a vertical line slightly shifted, so it misses the point where the first two lines cross. Three lines meeting in exactly one common point is a *special* situation, and any perturbation destroys it.
 

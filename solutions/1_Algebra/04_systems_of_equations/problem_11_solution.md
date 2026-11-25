@@ -2,6 +2,8 @@
 
 ## The system
 
+Consider the following system of three linear equations in the unknowns $x, y, z$ with a real parameter $t \in \mathbb{R}$:
+
 $$
 \begin{cases}
 x + y + z = 1,\\
@@ -9,6 +11,14 @@ x + ty + z = 2,\\
 x + y + tz = 3.
 \end{cases}
 $$
+
+## Problem statement
+
+Solve the given parametric system of linear equations and analyze how the parameter $t$ affects its solutions:
+
+1. Reduce the augmented matrix $[A \mid b]$ to row echelon form and inspect any exceptional pivot values where standard division or back-substitution steps break down.
+2. Analyze the number of solutions (unique solution, infinitely many solutions, or no solution) for every real value of the parameter $t$, explaining why any non-occurring case is impossible.
+3. Find the explicit solution(s) for each valid case and verify the result in the original equations.
 
 ---
 
