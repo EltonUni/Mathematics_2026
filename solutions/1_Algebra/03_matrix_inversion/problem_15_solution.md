@@ -1,4 +1,8 @@
-Given:
+# Exercise 15. Solving a Linear System Using Two Methods
+
+## Given
+
+The coefficient matrix and the right-hand side vector are:
 
 $$
 A=\begin{pmatrix}
@@ -18,11 +22,24 @@ $$
 Ax=b
 $$
 
-using two different methods: (1) the inverse matrix, $x=A^{-1}b$, and (2) Gaussian elimination. Then compare the essential steps of the two methods and decide which method is simpler for this system.
+## Problem statement
+
+Solve the system using two different methods:
+
+1. **Inverse matrix method:** Calculate \(A^{-1}\) and use \(x=A^{-1}b\) to find the solution.
+2. **Gaussian elimination:** Solve the system by writing the augmented matrix and applying elementary row operations.
+
+After solving:
+
+- Compare the essential steps involved in both methods.
+- Confirm that both methods produce the same solution.
+- Decide which method is simpler for this particular system and explain why.
+
+---
 
 ## Method 1: Using the inverse matrix
 
-**Step 1: Find the inverse of A.**
+**Step 1: Find the inverse of \(A\).**
 
 First, calculate the determinant:
 
@@ -40,7 +57,7 @@ A^{-1}=\frac{1}{5}
 \end{pmatrix}
 $$
 
-**Step 2: Calculate x = A⁻¹b.**
+**Step 2: Calculate \(x=A^{-1}b\).**
 
 $$
 x=
@@ -92,6 +109,8 @@ x=
 \end{pmatrix}
 }
 $$
+
+---
 
 ## Method 2: Using Gaussian elimination
 
@@ -157,7 +176,7 @@ $$
 \right]
 $$
 
-**Step 5: Solve for x.**
+**Step 5: Solve for \(x\).**
 
 Divide the first row by 2:
 
@@ -186,6 +205,8 @@ x=
 }
 $$
 
+---
+
 ## Step 3: Compare both methods
 
 Both methods give the same solution:
@@ -204,17 +225,27 @@ $$
 
 | Method | Essential steps |
 |---|---|
-| Inverse method | Find determinant, calculate inverse, multiply by b |
+| Inverse method | Find determinant, calculate inverse, multiply by \(b\) |
 | Gaussian elimination | Create augmented matrix, eliminate entries, solve |
 
 **Which method was simpler?**
 
-In this example, the inverse method was simpler because the matrix is only $2\times2$, making its inverse easy to calculate.
+In this example, the inverse method was simpler because the matrix is only \(2\times2\), making its determinant and inverse easy to calculate.
 
 For larger systems, Gaussian elimination is generally more practical because calculating a complete inverse requires more work.
 
-**Final Answer:**
+---
+
+## Final Answer
+
+The unique solution is:
 
 $$
-\boxed{x_1=\frac{13}{5},\qquad x_2=\frac95}
+\boxed{
+x_1=\frac{13}{5},
+\qquad
+x_2=\frac95
+}
 $$
+
+Both methods produce the same result.

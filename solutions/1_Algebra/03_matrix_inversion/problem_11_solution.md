@@ -1,135 +1,236 @@
-Given:
+# Exercise 11. A Parameter in a System of Three Equations
+
+## Problem statement
+
+Consider the following system of three linear equations with a real parameter $t$:
 
 $$
-A(t)=
+\begin{cases}
+x + y + z = 1,\\
+x + ty + z = 2,\\
+x + y + tz = 3.
+\end{cases}
+$$
+
+Solve the system and determine the inverse $A^{-1}$ of the coefficient matrix $A$ for all values of the parameter $t$. Identify the excluded parameter values and explain what happens to the inverse formula at those excluded values before beginning the calculation.
+
+---
+
+## Step 1: Augmented matrix
+
+$$
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 1\\
+1 & t & 1 & 2\\
+1 & 1 & t & 3
+\end{array}\right)
+$$
+
+The first pivot is $1$, so it never depends on $t$ and no case distinction is needed yet.
+
+---
+
+## Step 2: Eliminate $x$ from rows 2 and 3
+
+- $R_2 \leftarrow R_2 - R_1$: $(0,\ t-1,\ 0,\ 1)$
+- $R_3 \leftarrow R_3 - R_1$: $(0,\ 0,\ t-1,\ 2)$
+
+$$
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 1\\
+0 & t-1 & 0 & 1\\
+0 & 0 & t-1 & 2
+\end{array}\right)
+$$
+
+The matrix is already in row echelon form. The second and third pivots are both $t-1$.
+
+---
+
+## Step 3: Where does a standard step stop being valid?
+
+To continue (back substitution) we must **divide by the pivots** $t-1$:
+
+$$
+y = \frac{1}{t-1}, \qquad z = \frac{2}{t-1}.
+$$
+
+This division is valid **only if $t \neq 1$**. So $t = 1$ must be analyzed separately.
+
+---
+
+## Step 4: Case $t \neq 1$
+
+Both pivots are nonzero, so there are 3 pivots and $\operatorname{rank}(A) = \operatorname{rank}([A\mid b]) = 3$.
+
+**From row 3:** $z = \dfrac{2}{t-1}$.
+
+**From row 2:** $y = \dfrac{1}{t-1}$.
+
+**From row 1:**
+
+$$
+x = 1 - y - z = 1 - \frac{3}{t-1} = \frac{t-1-3}{t-1} = \frac{t-4}{t-1}.
+$$
+
+**Unique solution:**
+
+$$
+(x,y,z) = \left(\frac{t-4}{t-1},\ \frac{1}{t-1},\ \frac{2}{t-1}\right).
+$$
+
+**Check in the original equations (general $t \neq 1$):**
+
+- Eq. 1: $\dfrac{t-4}{t-1} + \dfrac{1}{t-1} + \dfrac{2}{t-1} = \dfrac{t-1}{t-1} = 1$ ✓
+- Eq. 2: $\dfrac{t-4}{t-1} + \dfrac{t}{t-1} + \dfrac{2}{t-1} = \dfrac{2t-2}{t-1} = 2$ ✓
+- Eq. 3: $\dfrac{t-4}{t-1} + \dfrac{1}{t-1} + \dfrac{2t}{t-1} = \dfrac{3t-3}{t-1} = 3$ ✓
+
+**Numerical example, $t = 2$:** $(x,y,z) = (-2,\ 1,\ 2)$.
+$-2+1+2 = 1$ ✓, $-2+2+2 = 2$ ✓, $-2+1+4 = 3$ ✓.
+
+---
+
+## Step 5: Case $t = 1$
+
+Substituting $t = 1$ in the echelon form:
+
+$$
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 1\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 2
+\end{array}\right)
+$$
+
+Row 2 says $0 = 1$ and row 3 says $0 = 2$. Both are **impossible**, so the system is **inconsistent**:
+
+$$
+\operatorname{rank}(A) = 1 \neq 2 = \operatorname{rank}([A \mid b]).
+$$
+
+**Interpretation in the original equations:** for $t = 1$ the left-hand sides of all three equations are the same expression $x + y + z$, but the right-hand sides are $1$, $2$, $3$. The same quantity cannot equal three different numbers.
+
+---
+
+## Step 6: Determinant check
+
+Since elimination used no row swaps and no scaling,
+
+$$
+\det A = 1\cdot(t-1)\cdot(t-1) = (t-1)^2.
+$$
+
+- $\det A \neq 0 \iff t \neq 1$ → unique solution and the inverse exists.
+- $\det A = 0 \iff t = 1$ → the inverse does not exist (and this system has no solution).
+
+---
+
+## Step 7: Finding the inverse matrix
+
+The coefficient matrix is
+
+$$
+A = \begin{pmatrix}
+1 & 1 & 1\\
+1 & t & 1\\
+1 & 1 & t
+\end{pmatrix}.
+$$
+
+For $t \neq 1$, the determinant is nonzero, so the inverse exists. Using the adjugate formula,
+
+$$
+A^{-1} = \frac{1}{\det A}\operatorname{adj}(A)
+= \frac{1}{(t-1)^2}
 \begin{pmatrix}
-1&t\\
-t&1
-\end{pmatrix}
+t^2-1 & 1-t & 1-t\\
+1-t & t-1 & 0\\
+1-t & 0 & t-1
+\end{pmatrix}.
 $$
 
-We need to find all values of $t$ for which the matrix is invertible, calculate its inverse, and explain what happens to the inverse formula at the excluded parameter values.
-
-**Step 1: Calculate the determinant.**
-
-For a $2\times2$ matrix:
-
-$$
-\det(A)=ad-bc
-$$
-
-Therefore:
-
-$$
-\det(A(t))=1(1)-t(t)
-$$
-
-$$
-=1-t^2
-$$
-
-A matrix is invertible if its determinant is not zero.
-
-$$
-1-t^2\neq0
-$$
-
-$$
-t^2\neq1
-$$
-
-$$
-t\neq\pm1
-$$
-
-Therefore, the matrix is invertible when:
-
-$$
-\boxed{t\in\mathbb{R},\quad t\neq-1,\;t\neq1}
-$$
-
-**Step 2: Find the inverse formula.**
-
-Using the inverse formula for a $2\times2$ matrix:
-
-$$
-A^{-1}=\frac{1}{ad-bc}
-\begin{pmatrix}
-d&-b\\
--c&a
-\end{pmatrix}
-$$
-
-Substitute the values:
-
-$$
-A(t)^{-1}=
-\frac{1}{1-t^2}
-\begin{pmatrix}
-1&-t\\
--t&1
-\end{pmatrix}
-$$
-
-Therefore:
+Factoring out $t-1$ gives
 
 $$
 \boxed{
-A(t)^{-1}=
-\frac{1}{1-t^2}
+A^{-1} = \frac{1}{t-1}
 \begin{pmatrix}
-1&-t\\
--t&1
+t+1 & -1 & -1\\
+-1 & 1 & 0\\
+-1 & 0 & 1
+\end{pmatrix}, \qquad t \neq 1.
+}
+$$
+
+Using $X=A^{-1}b$, where
+
+$$
+X = \begin{pmatrix}x\\y\\z\end{pmatrix},
+\qquad
+b = \begin{pmatrix}1\\2\\3\end{pmatrix},
+$$
+
+we obtain
+
+$$
+\begin{aligned}
+X &= \frac{1}{t-1}
+\begin{pmatrix}
+t+1 & -1 & -1\\
+-1 & 1 & 0\\
+-1 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}1\\2\\3\end{pmatrix}\\[6pt]
+&= \frac{1}{t-1}
+\begin{pmatrix}
+t+1-2-3\\
+-1+2\\
+-1+3
+\end{pmatrix}\\[6pt]
+&= \begin{pmatrix}
+\dfrac{t-4}{t-1}\\[4pt]
+\dfrac{1}{t-1}\\[4pt]
+\dfrac{2}{t-1}
+\end{pmatrix}.
+\end{aligned}
+$$
+
+This is the same solution found by elimination in Step 4.
+
+At the excluded value $t=1$, the denominator $t-1$ in the inverse formula is zero. Therefore, $A^{-1}$ does not exist and the inverse formula cannot be used. The original system must be checked separately; Step 5 shows that it is inconsistent and has no solution.
+
+---
+
+## Step 8: Why "infinitely many solutions" never occurs
+
+Infinitely many solutions would need a consistent system with a free variable. At $t = 1$ the system has a free-variable structure ($\operatorname{rank}(A) = 1 < 3$), but it is inconsistent because the right-hand sides $1, 2, 3$ are not compatible. For $t \neq 1$ there are no free variables. So this case never appears.
+
+---
+
+## Summary table
+
+| Value of $t$ | $\operatorname{rank}(A)$ | $\operatorname{rank}([A\mid b])$ | Number of solutions | Inverse of $A$ |
+|---|---:|---:|---|---|
+| $t \neq 1$ | $3$ | $3$ | **Exactly one** | Exists; formula in Step 7 |
+| $t = 1$ | $1$ | $2$ | **None** | Does not exist |
+| any $t$ | n/a | n/a | Infinitely many: **never** | n/a |
+
+---
+
+## Final answer
+
+- For $t \neq 1$: the inverse exists and the unique solution is
+
+$$
+A^{-1} = \frac{1}{t-1}
+\begin{pmatrix}
+t+1 & -1 & -1\\
+-1 & 1 & 0\\
+-1 & 0 & 1
 \end{pmatrix},
-\quad t\neq\pm1
-}
+\qquad
+(x,y,z) = \left(\frac{t-4}{t-1},\ \frac{1}{t-1},\ \frac{2}{t-1}\right).
 $$
 
-**Step 3: Explain what happens at the excluded values.**
-
-When $t=1$:
-
-$$
-A(1)=
-\begin{pmatrix}
-1&1\\
-1&1
-\end{pmatrix}
-$$
-
-The two rows are identical, so the determinant is zero.
-
-When $t=-1$:
-
-$$
-A(-1)=
-\begin{pmatrix}
-1&-1\\
--1&1
-\end{pmatrix}
-$$
-
-The second row is the negative of the first row, so the determinant is also zero.
-
-In both cases, the rows are linearly dependent, meaning the matrix has no inverse.
-
-Additionally, the inverse formula has a denominator of $1-t^2$, which becomes zero at $t=\pm1$. Therefore, the formula is undefined at these values.
-
-**Final Answer:**
-
-$$
-\boxed{t\neq\pm1}
-$$
-
-$$
-\boxed{
-A(t)^{-1}=
-\frac{1}{1-t^2}
-\begin{pmatrix}
-1&-t\\
--t&1
-\end{pmatrix}
-}
-$$
-
-At $t=1$ and $t=-1$, the inverse does not exist because the determinant equals zero.
+- For $t = 1$: $A^{-1}$ does not exist because $\det A = 0$, and the system has **no solution** because it is inconsistent.
+- Infinitely many solutions never occur.

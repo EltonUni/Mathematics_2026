@@ -1,12 +1,23 @@
-Given:
+# Exercise 14. A Matrix That Is Its Own Inverse
+
+## Given
 
 $$
 A^2=I
 $$
 
-We need to prove that $A^{-1}=A$, give an example of a $2\times2$ matrix different from $I$ and $-I$ that satisfies this condition, and verify by multiplication that the example satisfies $A^2=I$.
+## Problem statement
 
-### Step 1: Prove that A⁻¹ = A
+Given that \(A^2=I\):
+
+1. Prove that \(A^{-1}=A\).
+2. Give an example of a \(2\times2\) matrix different from both \(I\) and \(-I\) that satisfies this condition.
+3. Verify the example by explicitly multiplying the matrix by itself and showing that the result is the identity matrix.
+4. Use the multiplication verification to confirm that the example is its own inverse.
+
+---
+
+## Step 1: Prove that \(A^{-1}=A\)
 
 We know that:
 
@@ -26,7 +37,7 @@ $$
 AB=BA=I
 $$
 
-then $B$ is the inverse of $A$.
+then \(B\) is the inverse of \(A\).
 
 Since:
 
@@ -40,7 +51,9 @@ $$
 \boxed{A^{-1}=A}
 $$
 
-### Step 2: Give an example of a 2 × 2 matrix
+---
+
+## Step 2: Give an example of a \(2\times2\) matrix
 
 Choose the matrix:
 
@@ -52,11 +65,13 @@ A=
 \end{pmatrix}
 $$
 
-This matrix is different from both $I$ and $-I$.
+This matrix is different from both \(I\) and \(-I\).
 
-### Step 3: Verify the condition by multiplication
+---
 
-Calculate $A^2$:
+## Step 3: Verify the condition by multiplication
+
+Calculate \(A^2\):
 
 $$
 A^2=
@@ -107,8 +122,10 @@ A^{-1}=A=
 }
 $$
 
-### Final Conclusion
+---
 
-If a square matrix satisfies $A^2=I$, then it is its own inverse.
+## Final Conclusion
+
+If a square matrix satisfies \(A^2=I\), then it is its own inverse.
 
 Our example confirms this because multiplying the matrix by itself gives the identity matrix.
