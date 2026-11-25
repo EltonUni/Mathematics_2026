@@ -2,12 +2,22 @@
 
 ## The system
 
+Consider the following system of two linear equations:
+
 $$
 \begin{cases}
 x + y = 10,\\
 2x + 5y = 32.
 \end{cases}
 $$
+
+## Problem statement
+
+Solve the given system of linear equations and analyze the uniqueness of its solution:
+
+1. Solve the system using Gaussian elimination and back substitution, and verify the solution in both original equations.
+2. Confirm uniqueness algebraically using pivots, matrix rank, and the determinant of the coefficient matrix.
+3. Explain geometrically why the solution is unique.
 
 ---
 
@@ -40,7 +50,7 @@ $$
 \end{array}\right)
 $$
 
-This is **row echelon form** with two pivots ($1$ and $3$), so $\operatorname{rank}(A) = \operatorname{rank}([A \mid b]) = 2 = $ number of unknowns. The system is consistent with a **unique solution**.
+This is **row echelon form** with two pivots ($1$ and $3$), so $\operatorname{rank}(A) = \operatorname{rank}([A \mid b]) = 2 = \text{number of unknowns}$. The system is consistent with a **unique solution**.
 
 ---
 

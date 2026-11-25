@@ -1,5 +1,27 @@
 # Exercise 7. Choosing a Method Deliberately
 
+## Problem statement
+
+Consider the following three linear-system situations:
+
+1. **Triangular system:**
+   $$
+   \begin{cases}
+   2x - y = 3,\\
+   4y = 8.
+   \end{cases}
+   $$
+2. **Three systems with a known inverse:** Three linear systems $Ax = b_i$ ($i = 1, 2, 3$) that share the same invertible coefficient matrix $A$, where $A^{-1}$ is already known.
+3. **Single $3 \times 3$ system without an inverse:** One $3 \times 3$ linear system $Ax = b$, where $A^{-1}$ is not given and only a single solution vector is needed.
+
+**Tasks:**
+
+1. Choose and justify a suitable solution method for each of the three situations.
+2. Solve the triangular system in Situation 1 completely and verify the answer.
+3. Give step-by-step solution plans for Situations 2 and 3, explicitly identifying which parts of the computation are **reusable** and which would be **unnecessary** work.
+
+---
+
 The guiding idea: a method should be judged by **the structure of the matrix** and **the number of right-hand sides**, not by its name. Each method has a cost, and part of that cost may be reusable or wasted.
 
 ---

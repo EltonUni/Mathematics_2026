@@ -2,6 +2,8 @@
 
 ## The system
 
+Consider the following system of two linear equations in the unknowns $x, y$ with a real parameter $a \in \mathbb{R}$:
+
 $$
 \begin{cases}
 x + y = 2,\\
@@ -9,7 +11,15 @@ ax + ay = 4.
 \end{cases}
 $$
 
-The unknowns are $x, y$. The parameter $a \in \mathbb{R}$ appears only in the second equation.
+## Problem statement
+
+Analyze the given system for all values of the parameter $a \in \mathbb{R}$ and determine which solution cases occur:
+
+1. Classify all values of $a$ according to whether the system has:
+   - a **unique solution** (exactly one solution),
+   - **infinitely many solutions** (and find the general parametric solution), or
+   - **no solution** (an inconsistent system).
+2. Identify any classification among the three that never occurs and explain why that case is impossible (using row echelon form, rank/determinant, and a geometric interpretation).
 
 ---
 

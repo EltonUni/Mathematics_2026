@@ -2,6 +2,8 @@
 
 ## The two systems
 
+Consider the following two systems of linear equations:
+
 $$
 \text{(S1)}\ \begin{cases} 2x + y = 5,\\ x - y = 1, \end{cases}
 \qquad\qquad
@@ -21,6 +23,14 @@ b_1 = \begin{pmatrix} 5 \\ 1 \end{pmatrix},
 \qquad
 b_2 = \begin{pmatrix} 1 \\ 4 \end{pmatrix}.
 $$
+
+## Problem statement
+
+Solve both systems (S1) and (S2) and analyze the shared structure of their elimination steps:
+
+1. Solve each system separately using Gaussian elimination and back substitution, and verify both solutions.
+2. Compare the elimination steps for (S1) and (S2) to identify which steps and results can be reused across both systems and which parts must be recomputed.
+3. Explain why the operations on $A$ are independent of the right-hand side, and demonstrate how to solve both systems simultaneously using a single combined augmented matrix $[A \mid b_1\ b_2]$.
 
 ---
 
