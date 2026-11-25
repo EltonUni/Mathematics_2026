@@ -2,13 +2,27 @@
 
 ## The system
 
+Consider the following system of three linear equations:
+
 $$
 \begin{cases}
-x + y + z = 6,\\
-2x - y + z = 3,\\
-x + 2y - z = 2.
+x+y+z=6,\\
+2x-y+z=3,\\
+x+2y-z=2.
 \end{cases}
 $$
+
+## Problem statement
+
+Solve the given system of linear equations using Gaussian elimination.
+
+Show all the essential steps:
+
+1. Write the augmented matrix $[A\mid b]$.
+2. Apply elementary row operations to transform the matrix into row echelon form.
+3. Identify the pivots and determine whether the system has a unique solution.
+4. Use back substitution to find the values of $x$, $y$, and $z$.
+5. Check the obtained solution by substituting it into all three original equations and verify that each equation is satisfied.
 
 ---
 
@@ -29,8 +43,8 @@ The first pivot is already $1$, so no row swap is needed yet.
 
 ## Step 2: Eliminate $x$ from rows 2 and 3
 
-- $R_2 \leftarrow R_2 - 2R_1$: $(2-2,\ -1-2,\ 1-2,\ 3-12) = (0,\,-3,\,-1,\,-9)$
-- $R_3 \leftarrow R_3 - R_1$: $(1-1,\ 2-1,\ -1-1,\ 2-6) = (0,\,1,\,-2,\,-4)$
+- $R_2 \leftarrow R_2 - 2R_1$: $(2-2,\ -1-2,\ 1-2,\ 3-12) = (0,-3,-1,-9)$
+- $R_3 \leftarrow R_3 - R_1$: $(1-1,\ 2-1,\ -1-1,\ 2-6) = (0,1,-2,-4)$
 
 $$
 \left(\begin{array}{ccc|c}
@@ -60,9 +74,9 @@ $$
 
 $R_3 \leftarrow R_3 + 3R_2$:
 
-- Coefficient of $y$: $-3 + 3 = 0$
-- Coefficient of $z$: $-1 + 3\cdot(-2) = -7$
-- Right-hand side: $-9 + 3\cdot(-4) = -21$
+- Coefficient of $y$: $-3+3=0$
+- Coefficient of $z$: $-1+3\cdot(-2)=-7$
+- Right-hand side: $-9+3\cdot(-4)=-21$
 
 $$
 \left(\begin{array}{ccc|c}
@@ -72,42 +86,44 @@ $$
 \end{array}\right)
 $$
 
-This is **row echelon form** with three pivots ($1$, $1$, $-7$), so the system has a **unique solution**.
+This is row echelon form with three pivots ($1$, $1$, $-7$), so the system has a unique solution.
 
 ---
 
 ## Step 5: Back substitution
 
-**From row 3:**
+From row 3:
 $$
--7z = -21 \;\Longrightarrow\; z = 3
-$$
-
-**From row 2:**
-$$
-y - 2z = -4 \;\Longrightarrow\; y = -4 + 2\cdot 3 = 2
+-7z=-21 \Longrightarrow z=3
 $$
 
-**From row 1:**
+From row 2:
 $$
-x + y + z = 6 \;\Longrightarrow\; x = 6 - 2 - 3 = 1
+y-2z=-4 \Longrightarrow y=-4+2\cdot3=2
+$$
+
+From row 1:
+$$
+x+y+z=6 \Longrightarrow x=6-2-3=1
 $$
 
 ---
 
 ## Step 6: Check consistency in all original equations
 
-| Equation | Substitution $(x,y,z) = (1,2,3)$ | Result |
-|---|---|---|
-| $x + y + z = 6$ | $1 + 2 + 3$ | $6$ ✓ |
-| $2x - y + z = 3$ | $2 - 2 + 3$ | $3$ ✓ |
-| $x + 2y - z = 2$ | $1 + 4 - 3$ | $2$ ✓ |
+Substitute $(x,y,z)=(1,2,3)$ into each original equation:
 
-All three equations are satisfied, so the solution is consistent.
+| Original equation | Substitution | Result |
+|---|---|---|
+| $x+y+z=6$ | $1+2+3$ | $6=6$ ✓ |
+| $2x-y+z=3$ | $2(1)-2+3$ | $3=3$ ✓ |
+| $x+2y-z=2$ | $1+2(2)-3$ | $2=2$ ✓ |
+
+All three equations are satisfied, so the solution is correct.
 
 ---
 
-## Extra check: the determinant
+## Extra check: The determinant
 
 $$
 \det A =
@@ -116,18 +132,32 @@ $$
 2 & -1 & 1\\
 1 & 2 & -1
 \end{vmatrix}
-= 1\big((-1)(-1) - 1\cdot 2\big) - 1\big(2\cdot(-1) - 1\cdot 1\big) + 1\big(2\cdot 2 - (-1)\cdot 1\big)
-= -1 + 3 + 5 = 7 \neq 0
 $$
 
-Since $\det A \neq 0$, the matrix is invertible and the solution is unique.
-(This also matches the pivots: $1\cdot 1\cdot(-7) = -7$, and the one row swap flips the sign, giving $+7$.)
+$$
+=1\big((-1)(-1)-1\cdot2\big)
+-1\big(2(-1)-1\cdot1\big)
++1\big(2\cdot2-(-1)\cdot1\big)
+$$
+
+$$
+=-1+3+5=7\neq0
+$$
+
+Since $\det A\neq0$, the matrix is invertible and the solution is unique.
+(This also matches the pivots: $1\cdot1\cdot(-7)=-7$, and the one row swap flips the sign, giving $+7$.)
 
 ---
 
 ## Final answer
 
 $$
-\mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}
-= \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}
+\boxed{
+(x,y,z) = (1,2,3), \qquad
+\mathbf{x} = \begin{pmatrix}
+1\\
+2\\
+3
+\end{pmatrix}
+}
 $$

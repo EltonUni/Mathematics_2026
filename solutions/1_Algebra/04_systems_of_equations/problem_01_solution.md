@@ -2,37 +2,49 @@
 
 ## The system
 
+Consider the following system of three linear equations:
+
 $$
 \begin{cases}
-2x - y + z = 4,\\
-x + 3y - 2z = 1,\\
-3x + y + z = 7.
+2x-y+z=4,\\
+x+3y-2z=1,\\
+3x+y+z=7.
 \end{cases}
 $$
 
-We want to write it in the form $Ax = b$.
+## Problem statement
+
+Rewrite the given system in the matrix form \(Ax=b\).
+
+Before writing the final matrix equation:
+
+1. Identify the coefficient matrix \(A\), using the coefficients of the variables in each equation.
+2. Identify the unknown vector \(\mathbf{x}\), keeping the variables in a consistent order.
+3. Identify the right-hand side vector \(b\), using the constants from the right-hand side of each equation.
+4. Explain how each row of the coefficient matrix corresponds to one equation in the original system.
+5. Verify the result by expanding the matrix–vector multiplication \(Ax\) and showing that it reproduces the original equations.
 
 ---
 
 ## Step 1: Identify the unknowns
 
-The variables appearing in the equations are $x$, $y$, $z$. We always keep them in the same order in every equation, so we collect them in the **vector of unknowns**:
+The variables appearing in the equations are \(x\), \(y\), \(z\). We always keep them in the same order in every equation, so we collect them in the **vector of unknowns**:
 
 $$
-\mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}
+\mathbf{x} = \begin{pmatrix} x\\y\\z \end{pmatrix}
 $$
 
 ---
 
-## Step 2: Read off the coefficients (coefficient matrix $A$)
+## Step 2: Read off the coefficients (coefficient matrix \(A\))
 
-Each equation gives one row of $A$. The entries of the row are the coefficients of $x$, $y$, $z$ **in that order**. If a variable is missing, its coefficient is $0$. If it appears without a number, its coefficient is $1$ (and $-y$ means $-1$).
+Each equation gives one row of \(A\). The entries of the row are the coefficients of \(x\), \(y\), \(z\) **in that order**. If a variable is missing, its coefficient is \(0\). If it appears without a number, its coefficient is \(1\) (and \(-y\) means \(-1\)).
 
-| Equation | Coefficient of $x$ | Coefficient of $y$ | Coefficient of $z$ |
+| Equation | Coefficient of \(x\) | Coefficient of \(y\) | Coefficient of \(z\) |
 |---|---|---|---|
-| $2x - y + z = 4$ | $2$ | $-1$ | $1$ |
-| $x + 3y - 2z = 1$ | $1$ | $3$ | $-2$ |
-| $3x + y + z = 7$ | $3$ | $1$ | $1$ |
+| \(2x-y+z=4\) | \(2\) | \(-1\) | \(1\) |
+| \(x+3y-2z=1\) | \(1\) | \(3\) | \(-2\) |
+| \(3x+y+z=7\) | \(3\) | \(1\) | \(1\) |
 
 Therefore:
 
@@ -46,17 +58,17 @@ $$
 
 ---
 
-## Step 3: Right-hand side vector $b$
+## Step 3: Right-hand side vector \(b\)
 
 The numbers to the right of the equal signs, in the same order as the equations:
 
 $$
-b = \begin{pmatrix} 4 \\ 1 \\ 7 \end{pmatrix}
+b = \begin{pmatrix} 4\\1\\7 \end{pmatrix}
 $$
 
 ---
 
-## Step 4: Write the system as $Ax = b$
+## Step 4: Write the system as \(Ax=b\)
 
 $$
 \begin{pmatrix}
@@ -64,51 +76,61 @@ $$
 1 & 3 & -2\\
 3 & 1 & 1
 \end{pmatrix}
-\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+\begin{pmatrix} x\\y\\z \end{pmatrix}
 =
-\begin{pmatrix} 4 \\ 1 \\ 7 \end{pmatrix}
+\begin{pmatrix} 4\\1\\7 \end{pmatrix}
 $$
 
 ---
 
 ## Step 5: Verify that each row corresponds to one equation
 
-Matrix–vector multiplication works **row by row**: the $i$-th entry of $Ax$ is the dot product of the $i$-th row of $A$ with the vector $\mathbf{x}$.
+Matrix–vector multiplication works **row by row**: the \(i\)-th entry of \(Ax\) is the dot product of the \(i\)-th row of \(A\) with the vector \(\mathbf{x}\).
 
 **Row 1:**
+
 $$
-(2,\,-1,\,1)\cdot(x,\,y,\,z) = 2x - y + z = 4
+(2,-1,1)\cdot(x,y,z) = 2x-y+z = 4
 $$
+
 This is exactly the first equation.
 
 **Row 2:**
+
 $$
-(1,\,3,\,-2)\cdot(x,\,y,\,z) = x + 3y - 2z = 1
+(1,3,-2)\cdot(x,y,z) = x+3y-2z = 1
 $$
+
 This is exactly the second equation.
 
 **Row 3:**
+
 $$
-(3,\,1,\,1)\cdot(x,\,y,\,z) = 3x + y + z = 7
+(3,1,1)\cdot(x,y,z) = 3x+y+z = 7
 $$
+
 This is exactly the third equation.
 
-So multiplying out gives
+So multiplying out gives:
 
 $$
-Ax = \begin{pmatrix} 2x - y + z \\ x + 3y - 2z \\ 3x + y + z \end{pmatrix}
+Ax = \begin{pmatrix}
+2x-y+z\\
+x+3y-2z\\
+3x+y+z
+\end{pmatrix}
 $$
 
-and the equality $Ax = b$ means that these three entries are equal, entry by entry, to $4$, $1$, $7$, which is precisely the original system.
+The equality \(Ax=b\) means that these three entries are equal, entry by entry, to \(4\), \(1\), and \(7\), which is precisely the original system.
 
 ---
 
-## Explanation: how rows correspond to equations
+## Explanation: How rows correspond to equations
 
-- **Row $i$ of $A$** stores the coefficients of the **$i$-th equation**.
-- **Entry $b_i$** is the right-hand side of the **$i$-th equation**.
-- **Column $j$ of $A$** stores the coefficients of the **$j$-th unknown** (column 1 → $x$, column 2 → $y$, column 3 → $z$).
-- The single matrix equation $Ax = b$ is a compact way of writing all three scalar equations at once.
+- **Row \(i\) of \(A\)** stores the coefficients of the \(i\)-th equation.
+- **Entry \(b_i\)** is the right-hand side of the \(i\)-th equation.
+- **Column \(j\) of \(A\)** stores the coefficients of the \(j\)-th unknown (column 1 → \(x\), column 2 → \(y\), column 3 → \(z\)).
+- The single matrix equation \(Ax=b\) is a compact way of writing all three scalar equations at once.
 
 ---
 
@@ -121,7 +143,7 @@ A = \begin{pmatrix}
 3 & 1 & 1
 \end{pmatrix},
 \qquad
-\mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix},
+\mathbf{x} = \begin{pmatrix} x\\y\\z \end{pmatrix},
 \qquad
-b = \begin{pmatrix} 4 \\ 1 \\ 7 \end{pmatrix}
+b = \begin{pmatrix} 4\\1\\7 \end{pmatrix}
 $$

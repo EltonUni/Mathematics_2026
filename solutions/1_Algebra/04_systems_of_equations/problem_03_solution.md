@@ -2,6 +2,8 @@
 
 ## The system
 
+Consider the following system of two linear equations:
+
 $$
 \begin{cases}
 x + 2y = 3,\\
@@ -9,7 +11,15 @@ x + 2y = 3,\\
 \end{cases}
 $$
 
-We want to solve it or show that it has no solution.
+## Problem statement
+
+Determine whether the given system of linear equations has a solution, or show that it is inconsistent.
+
+Show all the essential steps:
+
+1. Write the augmented matrix $[A \mid b]$ and apply Gaussian elimination to reveal the contradiction in the reduced matrix.
+2. Interpret the inconsistent row and explain the contradiction directly in terms of the original equations.
+3. Confirm the inconsistency using matrix ranks and a geometric interpretation of the two equations.
 
 ---
 

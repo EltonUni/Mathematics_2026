@@ -2,6 +2,8 @@
 
 ## The augmented matrix
 
+Consider the following augmented matrix in row echelon form representing a system of linear equations in the unknowns $x, y, z$:
+
 $$
 [A \mid b] =
 \left(\begin{array}{ccc|c}
@@ -11,7 +13,13 @@ $$
 \end{array}\right)
 $$
 
-The unknowns are $x, y, z$ (columns 1, 2, 3). The matrix is already in **row echelon form**, so no elimination is needed to read off the structure.
+## Problem statement
+
+Analyze the given row-echelon augmented matrix and solve the corresponding system of linear equations:
+
+1. Determine whether the system is consistent and state the number of solutions.
+2. Identify the free variable and explain how the pivot structure determines which and how many variables can be chosen freely.
+3. Find the general solution and write it in parametric (vector) form, checking the result by substitution.
 
 ---
 
