@@ -8,7 +8,13 @@ A^{-1}=
 \end{pmatrix}
 $$
 
-We need to calculate $(3A)^{-1}$, $(A^T)^{-1}$, and $(A^2)^{-1}$ without finding $A$, and justify each proposed inverse identity using the relevant property.
+Without finding $A$, calculate the following, and justify each proposed inverse identity using the relevant property:
+
+(a) $(3A)^{-1}$
+
+(b) $(A^T)^{-1}$
+
+(c) $(A^2)^{-1}$
 
 ### Step 1: Calculate $(3A)^{-1}$
 
@@ -44,6 +50,14 @@ $$
 }
 $$
 
+**Justification:** Multiply $3A$ by the proposed inverse:
+
+$$
+(3A)\left(\frac13A^{-1}\right)=\left(3\cdot\frac13\right)AA^{-1}=I
+$$
+
+Since the product is $I$, the matrix $\frac13A^{-1}$ is the inverse of $3A$.
+
 ### Step 2: Calculate $(A^T)^{-1}$
 
 Use the transpose property:
@@ -73,6 +87,14 @@ $$
 \end{pmatrix}
 }
 $$
+
+**Justification:** Multiply $A^T$ by the proposed inverse and use $(XY)^T=Y^TX^T$:
+
+$$
+A^T(A^{-1})^T=(A^{-1}A)^T=I^T=I
+$$
+
+Since the product is $I$, the matrix $(A^{-1})^T$ is the inverse of $A^T$.
 
 ### Step 3: Calculate $(A^2)^{-1}$
 
@@ -129,6 +151,16 @@ $$
 \end{pmatrix}
 }
 $$
+
+**Justification:** Multiply $A^2$ by the proposed inverse:
+
+$$
+A^2\left(A^{-1}A^{-1}\right)=A\left(AA^{-1}\right)A^{-1}=A\,I\,A^{-1}=AA^{-1}=I
+$$
+
+Since the product is $I$, the matrix $A^{-1}A^{-1}$ is the inverse of $A^2$.
+
+For square matrices, a product equal to $I$ on one side is enough to show that the matrices are inverses of each other.
 
 ### Final Answers
 
