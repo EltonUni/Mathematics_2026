@@ -8,7 +8,7 @@ A^{-1}=
 \end{pmatrix}
 $$
 
-We need to calculate $(3A)^{-1}$, $(A^T)^{-1}$, and $(A^2)^{-1}$ without finding $A$.
+We need to calculate $(3A)^{-1}$, $(A^T)^{-1}$, and $(A^2)^{-1}$ without finding $A$, and justify each proposed inverse identity using the relevant property.
 
 ### Step 1: Calculate $(3A)^{-1}$
 

@@ -4,7 +4,7 @@ $$
 A^2=I
 $$
 
-We need to prove that $A^{-1}=A$ and give an example of a $2\times2$ matrix different from $I$ and $-I$ that satisfies this condition.
+We need to prove that $A^{-1}=A$, give an example of a $2\times2$ matrix different from $I$ and $-I$ that satisfies this condition, and verify by multiplication that the example satisfies $A^2=I$.
 
 ### Step 1: Prove that A⁻¹ = A
 

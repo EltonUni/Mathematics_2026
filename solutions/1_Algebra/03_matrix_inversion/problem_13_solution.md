@@ -12,7 +12,7 @@ H=\begin{pmatrix}
 \end{pmatrix}
 $$
 
-We need to find $T^{-1}$ in two ways, calculate $H^{-1}S^{-1}$, and explain why the order matters.
+Let $T=HS$. We need to find $T^{-1}$ in two ways (directly, and as $S^{-1}H^{-1}$), compare the two results, calculate $H^{-1}S^{-1}$ as a wrong-order check, and explain why the order matters.
 
 ### Step 1: Calculate T = HS
 

@@ -8,7 +8,7 @@ t&1
 \end{pmatrix}
 $$
 
-We need to find all values of $t$ for which the matrix is invertible and calculate its inverse.
+We need to find all values of $t$ for which the matrix is invertible, calculate its inverse, and explain what happens to the inverse formula at the excluded parameter values.
 
 **Step 1: Calculate the determinant.**
 

@@ -18,7 +18,7 @@ $$
 Ax=b
 $$
 
-using two different methods.
+using two different methods: (1) the inverse matrix, $x=A^{-1}b$, and (2) Gaussian elimination. Then compare the essential steps of the two methods and decide which method is simpler for this system.
 
 ## Method 1: Using the inverse matrix
 
