@@ -170,17 +170,22 @@ Interpretation: the solution set is a line through the origin in $\mathbb{R}^3$ 
 Substitute $(x,y,z)=(-t,t,t)$ into all three original equations:
 
 - Equation 1:
-$$
-x+2y-z=-t+2t-t=0
-$$
+
+  $$
+  x+2y-z=-t+2t-t=0
+  $$
+
 - Equation 2:
-$$
-2x+4y-2z=-2t+4t-2t=0
-$$
+
+  $$
+  2x+4y-2z=-2t+4t-2t=0
+  $$
+
 - Equation 3:
-$$
-x-y+2z=-t-t+2t=0
-$$
+
+  $$
+  x-y+2z=-t-t+2t=0
+  $$
 
 All three equations are satisfied for every real value of $t$.
 

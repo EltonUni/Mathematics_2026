@@ -161,17 +161,17 @@ $$
 
 2. **Compatibility is an exact condition, not an approximate one.** Row 3 of $A$ is a combination of rows 1 and 2:
 
-$$
-(3,\,0) = (1,\,1) + (2,\,-1).
-$$
+   $$
+   (3,\,0) = (1,\,1) + (2,\,-1).
+   $$
 
-For consistency the right-hand sides must obey the same relation:
+   For consistency the right-hand sides must obey the same relation:
 
-$$
-b_3 = b_1 + b_2 = 2 + 1 = 3.
-$$
+   $$
+   b_3 = b_1 + b_2 = 2 + 1 = 3.
+   $$
 
-S1 satisfies this ($b_3 = 3$). S2 breaks it ($3.1 \neq 3$) by $0.1$.
+   S1 satisfies this ($b_3 = 3$). S2 breaks it ($3.1 \neq 3$) by $0.1$.
 
 3. **Geometrically**, each equation is a line in the plane. In S1 the three lines pass through the single point $(1,1)$. In S2 the third line $x = \tfrac{3.1}{3} \approx 1.0333$ is a vertical line slightly shifted, so it misses the point where the first two lines cross. Three lines meeting in exactly one common point is a *special* situation, and any perturbation destroys it.
 

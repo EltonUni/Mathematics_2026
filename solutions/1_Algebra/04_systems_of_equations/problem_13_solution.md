@@ -161,17 +161,22 @@ Interpretation: the solution set is a line in $\mathbb{R}^3$ through $(2,8,0)$ w
 Substitute $(x_1,x_2,x_3)=(2+t,8-t,t)$ into all three original equations:
 
 - Equation 1:
-$$
-x_1+x_2=(2+t)+(8-t)=10
-$$
+
+  $$
+  x_1+x_2=(2+t)+(8-t)=10
+  $$
+
 - Equation 2:
-$$
-x_2+x_3=(8-t)+t=8
-$$
+
+  $$
+  x_2+x_3=(8-t)+t=8
+  $$
+
 - Equation 3:
-$$
-x_1-x_3=(2+t)-t=2
-$$
+
+  $$
+  x_1-x_3=(2+t)-t=2
+  $$
 
 All three equations are satisfied for every real value of $t$.
 
@@ -229,14 +234,16 @@ Therefore, equation 3 is a consequence of equations 1 and 2. Any solution satisf
 
 - Not all three: Equation 3 can be deleted without changing the solution set.
 - The relationship is symmetric:
-$$
-\begin{aligned}
-\text{Eq.}_3&=\text{Eq.}_1-\text{Eq.}_2,\\
-\text{Eq.}_1&=\text{Eq.}_2+\text{Eq.}_3,\\
-\text{Eq.}_2&=\text{Eq.}_1-\text{Eq.}_3.
-\end{aligned}
-$$
-Therefore, any one of the three equations can be removed, while the other two still describe the same solution set.
+
+  $$
+  \begin{aligned}
+  \text{Eq.}_3&=\text{Eq.}_1-\text{Eq.}_2,\\
+  \text{Eq.}_1&=\text{Eq.}_2+\text{Eq.}_3,\\
+  \text{Eq.}_2&=\text{Eq.}_1-\text{Eq.}_3.
+  \end{aligned}
+  $$
+
+  Therefore, any one of the three equations can be removed, while the other two still describe the same solution set.
 - But not two: Any two equations are linearly independent because neither is a scalar multiple of the other. Together, any pair gives rank 2. Removing a second equation would leave only one independent equation and introduce an additional free variable.
 
 Therefore, exactly two independent equations are necessary to describe the solution set, matching:

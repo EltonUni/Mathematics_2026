@@ -74,6 +74,7 @@ Both pivots are nonzero, so there are 3 pivots and $\operatorname{rank}(A) = \op
 **From row 2:** $y = \dfrac{1}{t-1}$.
 
 **From row 1:**
+
 $$
 x = 1 - y - z = 1 - \frac{3}{t-1} = \frac{t-1-3}{t-1} = \frac{t-4}{t-1}.
 $$
@@ -132,7 +133,7 @@ $$
 
 ## Step 7: Why "infinitely many solutions" never occurs
 
-Infinitely many solutions would need a consistent system with a free variable. At $t = 1$ the system has a free-variable structure ($\operatorname{rank}(A) = 1 < 3$), but it is inconsistent because the right-hand sides $1, 2, 3$ are not compatible. For $t \neq 1$ there are no free variables. So this case never appears.
+Infinitely many solutions require a consistent system with at least one free variable. At $t = 1$, the coefficient matrix has rank $1 < 3$, but the augmented matrix has rank $2$. Since the ranks are different, the system is inconsistent and has no solutions. For $t \neq 1$, all three variables are pivot variables, so the solution is unique. Therefore, infinitely many solutions never occur.
 
 ---
 
@@ -149,8 +150,10 @@ Infinitely many solutions would need a consistent system with a free variable. A
 ## Final answer
 
 - For $t \neq 1$: unique solution
-$$
-(x,y,z) = \left(\frac{t-4}{t-1},\ \frac{1}{t-1},\ \frac{2}{t-1}\right).
-$$
+
+  $$
+  (x,y,z) = \left(\frac{t-4}{t-1},\ \frac{1}{t-1},\ \frac{2}{t-1}\right).
+  $$
+
 - For $t = 1$: **no solution** (the system is inconsistent).
 - The critical value is $t = 1$, where the pivot $t-1$ becomes $0$ and division by it is no longer allowed.

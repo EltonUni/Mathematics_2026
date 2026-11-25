@@ -47,25 +47,44 @@ $$
 \end{array}\right)
 $$
 
-**Elimination.** To avoid fractions, use $R_2 \leftarrow 2R_2 - R_1$:
-
-- Coefficient of $x$: $2\cdot 1 - 2 = 0$
-- Coefficient of $y$: $2\cdot(-1) - 1 = -3$
-- Right-hand side: $2\cdot 1 - 5 = -3$
+**Elimination.** Swap rows ($R_1 \leftrightarrow R_2$) to place the unit pivot $1$ in the top-left position without introducing fractions:
 
 $$
 \left(\begin{array}{cc|c}
 2 & 1 & 5\\
-0 & -3 & -3
+1 & -1 & 1
+\end{array}\right)
+\xrightarrow{R_1 \leftrightarrow R_2}
+\left(\begin{array}{cc|c}
+1 & -1 & 1\\
+2 & 1 & 5
+\end{array}\right)
+$$
+
+Now eliminate $x$ from row 2 using the elementary row operation $R_2 \leftarrow R_2 - 2R_1$:
+
+- Coefficient of $x$: $2 - 2\cdot 1 = 0$
+- Coefficient of $y$: $1 - 2\cdot(-1) = 3$
+- Right-hand side: $5 - 2\cdot 1 = 3$
+
+$$
+\left(\begin{array}{cc|c}
+1 & -1 & 1\\
+2 & 1 & 5
+\end{array}\right)
+\xrightarrow{R_2 \leftarrow R_2 - 2R_1}
+\left(\begin{array}{cc|c}
+1 & -1 & 1\\
+0 & 3 & 3
 \end{array}\right)
 $$
 
 **Back substitution**
 
 $$
--3y = -3 \;\Longrightarrow\; y = 1,
+3y = 3 \;\Longrightarrow\; y = 1,
 \qquad
-2x + 1 = 5 \;\Longrightarrow\; x = 2.
+x - y = 1 \;\Longrightarrow\; x - 1 = 1 \;\Longrightarrow\; x = 2.
 $$
 
 **Check:** $2\cdot 2 + 1 = 5$ ✓ and $2 - 1 = 1$ ✓.
@@ -85,31 +104,50 @@ $$
 \end{array}\right)
 $$
 
-**Elimination.** The same operation $R_2 \leftarrow 2R_2 - R_1$:
-
-- Coefficient of $x$: $2\cdot 1 - 2 = 0$
-- Coefficient of $y$: $2\cdot(-1) - 1 = -3$
-- Right-hand side: $2\cdot 4 - 1 = 7$
+**Elimination.** Apply the exact same elementary row operations—first $R_1 \leftrightarrow R_2$:
 
 $$
 \left(\begin{array}{cc|c}
 2 & 1 & 1\\
-0 & -3 & 7
+1 & -1 & 4
+\end{array}\right)
+\xrightarrow{R_1 \leftrightarrow R_2}
+\left(\begin{array}{cc|c}
+1 & -1 & 4\\
+2 & 1 & 1
+\end{array}\right)
+$$
+
+Then eliminate $x$ from row 2 using $R_2 \leftarrow R_2 - 2R_1$:
+
+- Coefficient of $x$: $2 - 2\cdot 1 = 0$
+- Coefficient of $y$: $1 - 2\cdot(-1) = 3$
+- Right-hand side: $1 - 2\cdot 4 = -7$
+
+$$
+\left(\begin{array}{cc|c}
+1 & -1 & 4\\
+2 & 1 & 1
+\end{array}\right)
+\xrightarrow{R_2 \leftarrow R_2 - 2R_1}
+\left(\begin{array}{cc|c}
+1 & -1 & 4\\
+0 & 3 & -7
 \end{array}\right)
 $$
 
 **Back substitution**
 
 $$
--3y = 7 \;\Longrightarrow\; y = -\tfrac{7}{3},
+3y = -7 \;\Longrightarrow\; y = -\frac{7}{3},
 \qquad
-2x - \tfrac{7}{3} = 1 \;\Longrightarrow\; 2x = \tfrac{10}{3} \;\Longrightarrow\; x = \tfrac{5}{3}.
+x - y = 4 \;\Longrightarrow\; x - \left(-\frac{7}{3}\right) = 4 \;\Longrightarrow\; x = 4 - \frac{7}{3} = \frac{5}{3}.
 $$
 
-**Check:** $2\cdot\tfrac{5}{3} - \tfrac{7}{3} = \tfrac{3}{3} = 1$ ✓ and $\tfrac{5}{3} + \tfrac{7}{3} = 4$ ✓.
+**Check:** $2\cdot\frac{5}{3} - \frac{7}{3} = \frac{3}{3} = 1$ ✓ and $\frac{5}{3} - \left(-\frac{7}{3}\right) = \frac{12}{3} = 4$ ✓.
 
 $$
-(x,y) = \left(\tfrac{5}{3},\ -\tfrac{7}{3}\right)
+(x,y) = \left(\frac{5}{3},\ -\frac{7}{3}\right)
 $$
 
 ---
@@ -118,58 +156,63 @@ $$
 
 | | System 1 | System 2 |
 |---|---|---|
-| Row operation | $R_2 \leftarrow 2R_2 - R_1$ | $R_2 \leftarrow 2R_2 - R_1$ |
-| Left part after elimination | $\begin{pmatrix} 2 & 1\\ 0 & -3\end{pmatrix}$ | $\begin{pmatrix} 2 & 1\\ 0 & -3\end{pmatrix}$ |
-| Right-hand side after elimination | $\begin{pmatrix} 5\\ -3\end{pmatrix}$ | $\begin{pmatrix} 1\\ 7\end{pmatrix}$ |
+| Elementary row operations | $R_1 \leftrightarrow R_2$, then $R_2 \leftarrow R_2 - 2R_1$ | $R_1 \leftrightarrow R_2$, then $R_2 \leftarrow R_2 - 2R_1$ |
+| Left part after elimination | Rows $(1,\ -1)$ and $(0,\ 3)$ | Rows $(1,\ -1)$ and $(0,\ 3)$ |
+| Right-hand side after elimination | $(1,\ 3)^T$ | $(4,\ -7)^T$ |
 
-**What is the same:** the choice of pivot, the row operation, and the resulting triangular matrix
+**What is the same:** the choice of pivots, the sequence of elementary row operations ($R_1 \leftrightarrow R_2$ followed by $R_2 \leftarrow R_2 - 2R_1$), and the resulting upper triangular matrix
 
 $$
-U = \begin{pmatrix} 2 & 1\\ 0 & -3 \end{pmatrix}.
+U = \begin{pmatrix} 1 & -1\\ 0 & 3 \end{pmatrix}.
 $$
 
-**What is different:** only the right-hand side column.
+**What is different:** only the transformed right-hand side column ($(1,\ 3)^T$ versus $(4,\ -7)^T$).
 
 ---
 
 ## Part C: Why is this part the same?
 
-1. The row operations that are chosen depend **only on the entries of $A$**. The multiplier for $R_2$ is determined by the first column ($2$ and $1$), and the right-hand side is never consulted when choosing it.
-2. The right-hand side is only **carried along** by the same operations. Each operation acts on the $b$-column as a passive follower.
-3. Therefore, for every system $Ax = b$ with this $A$, the left block always ends up as the same $U$.
+1. The elementary row operations that are chosen depend **only on the entries of $A$**. Selecting the unit pivot via $R_1 \leftrightarrow R_2$ and determining the multiplier $2$ in $R_2 \leftarrow R_2 - 2R_1$ rely strictly on the first column of $A$; the right-hand side is never consulted.
+2. The right-hand side is only **carried along** by the same operations. Each row swap or row replacement acts on the $b$-column as a passive follower.
+3. Therefore, for every system $Ax = b$ with this coefficient matrix $A$, the left block always reduces to the exact same upper triangular matrix $U$.
 
-In other words, the elimination encodes a fixed transformation: the operation $R_2 \leftarrow 2R_2 - R_1$ is applied to whatever vector $b$ is attached, so the work on $A$ is independent of $b$.
+In other words, Gaussian elimination encodes a fixed sequence of elementary transformations applied to whatever vector $b$ is attached, making all work on $A$ completely independent of $b$.
 
 ---
 
 ## Part D: Doing both systems at once
 
-Because the left part is identical, we can eliminate **once** on a combined augmented matrix with two right-hand-side columns:
+Because the left part and elementary row operations are identical, we can eliminate **once** on a combined augmented matrix containing both right-hand-side columns:
 
 $$
 \left(\begin{array}{cc|cc}
 2 & 1 & 5 & 1\\
 1 & -1 & 1 & 4
 \end{array}\right)
-\xrightarrow{R_2 \leftarrow 2R_2 - R_1}
+\xrightarrow{R_1 \leftrightarrow R_2}
 \left(\begin{array}{cc|cc}
-2 & 1 & 5 & 1\\
-0 & -3 & -3 & 7
+1 & -1 & 1 & 4\\
+2 & 1 & 5 & 1
+\end{array}\right)
+\xrightarrow{R_2 \leftarrow R_2 - 2R_1}
+\left(\begin{array}{cc|cc}
+1 & -1 & 1 & 4\\
+0 & 3 & 3 & -7
 \end{array}\right)
 $$
 
-Then only the back substitution is done separately for each column:
+Then only back substitution is performed separately for each right-hand-side column:
 
-- Column 1: $y = 1$, $x = 2$
-- Column 2: $y = -\tfrac{7}{3}$, $x = \tfrac{5}{3}$
+- **Column 1 (System 1):** $3y = 3 \implies y = 1$, and $x - 1 = 1 \implies x = 2$.
+- **Column 2 (System 2):** $3y = -7 \implies y = -\frac{7}{3}$, and $x - \left(-\frac{7}{3}\right) = 4 \implies x = \frac{5}{3}$.
 
-This matches Part A and halves the elimination work. For many right-hand sides, the saving grows: the expensive elimination on $A$ ($\approx n^3/3$ operations) is done once, and each extra $b$ costs only the cheap steps ($\approx n^2$). This is the idea behind storing an **LU factorization**.
+This matches Part A and avoids repeating the elimination steps on the coefficient matrix. Both right-hand sides are transformed simultaneously, reducing duplicated work. For many right-hand sides, the saving grows substantially: the initial factorization of $A$ requires approximately $O(n^3)$ arithmetic operations, while each additional right-hand side requires only $O(n^2)$ operations for forward and back substitution. Recording the row swap and elimination multiplier is the basic idea behind an LU factorization with row permutation, written as $PA=LU$. In this example, the row swap is chosen to obtain a convenient unit pivot rather than to follow the standard largest-absolute-value partial-pivoting rule.
 
 ---
 
 ## Final answer
 
-- System 1: $(x,y) = (2,\ 1)$
-- System 2: $(x,y) = \left(\tfrac{5}{3},\ -\tfrac{7}{3}\right)$
-- **The same in both cases:** the pivots, the row operations, and the triangular matrix $U = \begin{pmatrix} 2 & 1\\ 0 & -3\end{pmatrix}$, because they depend only on the coefficient matrix $A$.
-- **Different:** only the transformed right-hand side column, which is why back substitution must be repeated for each system.
+- **System 1:** $(x,y) = (2,\ 1)$
+- **System 2:** $(x,y) = \left(\frac{5}{3},\ -\frac{7}{3}\right)$
+- **The same in both cases:** the pivots, the elementary row operations ($R_1 \leftrightarrow R_2$ and $R_2 \leftarrow R_2 - 2R_1$), and the upper triangular matrix $U = \begin{pmatrix} 1 & -1\\ 0 & 3\end{pmatrix}$, because they depend solely on the coefficient matrix $A$.
+- **Different:** only the transformed right-hand side column ($(1,\ 3)^T$ versus $(4,\ -7)^T$), which is why back substitution must be repeated for each system.
